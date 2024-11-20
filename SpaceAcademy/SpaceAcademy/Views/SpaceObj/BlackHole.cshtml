@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "BlackHole";
+}
+
+<h2>BlackHole</h2>
+<center><img src="~/Images/chernaDupla.jpg" style="width:100%" /></center>
+
+<div style="padding: 20px;">
+    <h3>What is a Black Hole?</h3>
+    <p>
+        A black hole is an astronomical object with a gravitational pull so strong that nothing, not even light, can escape it. The boundary around a black hole is called the event horizon, which is the point beyond which escape is impossible.
+    </p>
+
+    <h3>How are Black Holes Formed?</h3>
+    <p>
+        Black holes are typically formed when a massive star undergoes gravitational collapse. As the core of the star collapses, it condenses into a point of infinite density known as a singularity, surrounded by the event horizon.
+    </p>
+
+    <h3>Types of Black Holes</h3>
+    <ul>
+        <li><strong>Stellar Black Holes:</strong> These are formed by the collapse of a single massive star.</li>
+        <li><strong>Supermassive Black Holes:</strong> Found in the centers of galaxies, they contain the mass equivalent of millions or billions of stars.</li>
+        <li><strong>Intermediate Black Holes:</strong> Less common, these black holes have masses between stellar and supermassive black holes.</li>
+    </ul>
+
+    <h3>Interesting Facts About Black Holes</h3>
+    <ul>
+        <li>Nothing can escape from a black hole, not even light, which is why they are called "black."</li>
+        <li>Black holes can grow by absorbing mass from nearby objects, including stars and gas clouds.</li>
+        <li>The closest known black hole to Earth is about 1,000 light-years away.</li>
+        <li>Despite popular belief, black holes don't "suck" everything in like a vacuum cleaner. Objects need to be within a certain distance to be pulled in.</li>
+    </ul>
+
+    <h3>Famous Black Holes</h3>
+    <p>
+        The most famous black hole is the one located at the center of our galaxy, known as Sagittarius A*. It is a supermassive black hole that plays a significant role in holding our galaxy together.
+    </p>
+
+    <h3>Visualizing a Black Hole</h3>
+    <p>
+        Recently, scientists captured the first-ever image of a black hole using the Event Horizon Telescope in 2019. This black hole is located in the galaxy M87 and was a groundbreaking discovery in astrophysics.
+    </p>
+
+    <h3>Conclusion</h3>
+    <p>
+        Black holes remain one of the most mysterious and intriguing objects in space. With their immense gravitational pull and the strange physics around them, they continue to be a focus of research and fascination for scientists and enthusiasts alike.
+    </p>
+</div>
+<div style="justify-content:right; display:flex">
+    <button type="button" id="goBack" class="btn btn-dark" style="color:white; background-color:black">Go Back</button>
+</div>
+<script>
+    let btn = document.getElementById("goBack")
+    btn.addEventListener('click', () => {
+        window.location.replace("/Home");
+
+    })
+</script>
+
+<footer style="text-align: center; padding: 20px; background-color: #f1f1f1; margin-top: 30px;">
+    <p>&copy; 2024 BlackHole Enthusiasts | All rights reserved.</p>
+</footer>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Instructors";
+}
+<br />
+<div class="card-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    @foreach (var item in ViewData["ins"] as IEnumerable<SpaceAcademy.Models.Instructor>)
+    {
+        <div class="card" style="width: 30%; flex-grow: 1; border: 1px solid black; border-radius: 10px; padding: 10px;">
+            <img src="~/Images/@item.Image" class="card-img-top" alt="..." style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Experience.</p>
+                @if (item.ID == 1)
+                {
+                    <a href="/instructor/Mitko" class="btn btn-primary">See More</a>
+                }
+                @if (item.ID == 2)
+                {
+                    <a href="/instructor/Petq" class="btn btn-primary">See More</a>
+                }
+                @if (item.ID == 3)
+                {
+                    <a href="/instructor/Gosho" class="btn btn-primary">See More</a>
+                }
+            </div>
+        </div>
+    }
+</div>
+<div>
+    <h2>Space Academy Trainers</h2>
+    <p>Space Academy trainers are dedicated professionals who inspire and educate aspiring astronauts and space enthusiasts. With extensive experience in the aerospace industry, they provide hands-on training in various fields, including robotics, navigation, and astrophysics. These trainers utilize state-of-the-art technology and simulators to create an immersive learning environment. They also emphasize teamwork and problem-solving skills, essential for successful missions in space. Through their guidance, students develop the knowledge and confidence needed to pursue careers in space exploration and research.</p>
+</div>
+
+
+
+<style>
+    .card-body a {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .card-body a:hover {
+            background-color: white;
+            color: black;
+        }
+</style>

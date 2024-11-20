@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Mitko";
+}
+
+<h2>Mitko</h2>
+<div style="padding: 20px;">
+
+    <p>
+        Mitko is a dedicated Space Academy trainer with extensive experience in astrophysics and space exploration. Known for his in-depth knowledge and engaging teaching methods, Mitko helps aspiring astronauts master the complexities of space science and mission protocols.
+    </p>
+</div>
+<div style="justify-content:right; display:flex">
+    <button type="button" id="goBack" class="btn btn-dark" style="color:white; background-color:black">Go Back</button>
+</div>
+<script>
+    let btn = document.getElementById("goBack")
+    btn.addEventListener('click', () => {
+        window.location.replace("/Instructor");
+
+    })
+</script>
+
+

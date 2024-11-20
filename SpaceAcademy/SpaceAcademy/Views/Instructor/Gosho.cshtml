@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Gosho";
+}
+
+<h2>Gosho</h2>
+<div style="padding: 20px;">
+    <p>
+        Gosho is an expert Space Academy trainer with a focus on astronaut training and mission simulations. With a background in engineering and space technology, Gosho equips trainees with the critical skills needed to handle complex space missions and technical operations.
+    </p>
+</div>
+<div style="justify-content:right; display:flex">
+    <button type="button" id="goBack" class="btn btn-dark" style="color:white; background-color:black">Go Back</button>
+</div>
+<script>
+    let btn = document.getElementById("goBack")
+    btn.addEventListener('click', () => {
+        window.location.replace("/Instructor");
+            
+    })
+</script>

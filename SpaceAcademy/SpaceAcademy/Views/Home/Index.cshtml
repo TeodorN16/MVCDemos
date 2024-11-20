@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<br />
+<div class="card-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    @foreach (var item in ViewData["spaceObj"] as IEnumerable<SpaceAcademy.Models.SpaceObj>)
+    {
+        <div class="card" style="width: 30%; flex-grow: 1; border: 1px solid black; border-radius: 10px; padding: 10px;">
+            <img src="~/Images/@item.Image" class="card-img-top" alt="..." style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Desc</p>
+                @if (item.Id == 1)
+                {
+                    <a href="/SpaceObj/BlackHole" class="btn btn-primary see-more-btn" id="animation">See More</a>
+                }
+                @if (item.Id == 2)
+                {
+                    <a href="/SpaceObj/Saturn" class="btn btn-primary see-more-btn" id="animation">See More</a>
+                }
+                @if (item.Id == 3)
+                {
+                    <a href="/SpaceObj/Jupiter" class="btn btn-primary see-more-btn" id="animation">See More</a>
+                }
+            </div>
+        </div>
+    }
+</div>
+<div class="space-description">
+    <h2>About Space</h2>
+    <p>Space, also known as outer space, is the vast, seemingly infinite expanse that exists beyond Earth and its atmosphere. It is a near-perfect vacuum, containing very low densities of particles, electromagnetic radiation, and cosmic rays. Space is home to a variety of celestial bodies, including stars, planets, moons, asteroids, and comets. The study of space, known as astronomy, helps us understand the universe's origin, evolution, and the fundamental laws of physics. Explorations, such as those conducted by NASA and other space agencies, continue to reveal the mysteries of this remarkable frontier.</p>
+</div>
+
+
+<!-- Full-screen animation overlay -->
+<div id="fullscreenAnimation" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+    <img src="~/Images/rocket.gif" alt="Full-screen animation" style="width: 100%; height: 100%;">
+</div>
+
+<style>
+    .card-body a {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .card-body a:hover {
+            background-color: white;
+            color: black;
+        }
+</style>
+
+<script>
+    // Get all 'See More' buttons
+    let seeMoreButtons = document.querySelectorAll('.see-more-btn');
+
+    // Attach event listener to each button
+    seeMoreButtons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            showFullScreenAnimation(); +
+                console.log(event);
+            console.log(event.target.getAttribute("href"));
+            href = event.target.getAttribute("href")
+            // new URL(/S);
+            // Hide after 5 seconds
+            setTimeout(function () {
+                //new URL(href);
+                window.location.replace(href);
+            }, 3000); // 5 seconds
+
+        });
+    });
+
+
+    function showFullScreenAnimation() {
+        // Show full-screen animation overlay
+        let fullscreenAnimation = document.getElementById('fullscreenAnimation');
+        fullscreenAnimation.style.display = 'flex';
+
+        // Hide after 5 seconds
+        setTimeout(function () {
+            fullscreenAnimation.style.display = 'none';
+        }, 3000); // 5 seconds
+    }
+</script>
